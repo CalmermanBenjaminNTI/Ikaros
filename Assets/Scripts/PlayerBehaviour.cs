@@ -19,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         // Add spaceships to the dictionary
         _spaceShips.Add("Crescent", new AdvancedSpaceShip(0, new Vector3(200, 200, 200), 5f, new Vector3(2, 2, 2)));
-        _spaceShips.Add("Herald", new AdvancedSpaceShip(1, new Vector3(200, 200, 200), 5f, new Vector3(2, 2, 2)));
+        _spaceShips.Add("Herald", new SmartSpaceShip(1, new Vector3(200, 200, 200), 5f));
         _spaceShips.Add("StarGazer", new SpaceShip(2, new Vector3(200, 200, 200), 5f));
 
         // Try set the current spaceship to the one the player chose else default to Crescent
