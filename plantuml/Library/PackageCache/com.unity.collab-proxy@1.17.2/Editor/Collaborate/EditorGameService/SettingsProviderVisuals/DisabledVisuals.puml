@@ -1,0 +1,6 @@
+@startuml
+class DisabledVisuals {
+    + GetVisuals() : VisualElement
+}
+IVisuals <|-- DisabledVisuals
+@enduml

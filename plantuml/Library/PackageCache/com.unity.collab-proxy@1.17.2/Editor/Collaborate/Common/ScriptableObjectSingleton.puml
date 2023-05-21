@@ -1,0 +1,6 @@
+@startuml
+class "ScriptableObjectSingleton`1"<T> {
+    + {static} Instance : T <<get>>
+}
+ScriptableObject <|-- "ScriptableObjectSingleton`1"
+@enduml

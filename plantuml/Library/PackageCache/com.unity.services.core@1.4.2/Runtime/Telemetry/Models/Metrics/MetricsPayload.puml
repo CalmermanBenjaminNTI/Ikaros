@@ -1,0 +1,12 @@
+@startuml
+class MetricsPayload <<struct>> {
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+ITelemetryPayload <|-- MetricsPayload
+MetricsPayload --> "Metrics<Metric>" "List`1"
+MetricsPayload --> "CommonTags<string,string>" "Dictionary`2"
+MetricsPayload --> "MetricsCommonTags<string,string>" "Dictionary`2"
+@enduml

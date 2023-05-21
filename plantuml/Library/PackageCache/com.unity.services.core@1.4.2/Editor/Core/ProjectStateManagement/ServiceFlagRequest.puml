@@ -1,0 +1,6 @@
+@startuml
+class ServiceFlagRequest {
+    + FetchServiceFlags() : IAsyncOperation<IDictionary<string, bool>>
+}
+IServiceFlagRequest <|-- ServiceFlagRequest
+@enduml

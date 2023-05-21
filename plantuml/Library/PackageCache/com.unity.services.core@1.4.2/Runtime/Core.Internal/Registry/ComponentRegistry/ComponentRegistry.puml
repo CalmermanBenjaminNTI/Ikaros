@@ -1,0 +1,9 @@
+@startuml
+class ComponentRegistry {
+    + ComponentRegistry(componentTypeHashToInstance:Dictionary<int, IServiceComponent>)
+    + RegisterServiceComponent(component:TComponent) : void
+    + GetServiceComponent() : TComponent
+    + ResetProvidedComponents(componentTypeHashToInstance:IDictionary<int, IServiceComponent>) : void
+}
+IComponentRegistry <|-- ComponentRegistry
+@enduml

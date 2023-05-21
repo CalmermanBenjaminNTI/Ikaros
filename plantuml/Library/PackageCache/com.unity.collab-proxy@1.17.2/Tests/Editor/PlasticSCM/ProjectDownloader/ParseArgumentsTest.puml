@@ -1,0 +1,7 @@
+@startuml
+class ParseArgumentsTest {
+    + TestParseCloudProject() : void
+    + TestParseCloudOrganization() : void
+    + TestParseProjectPath() : void
+}
+@enduml

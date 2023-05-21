@@ -1,0 +1,15 @@
+@startuml
+class CreateWorkspaceView {
+}
+interface ICreateWorkspaceListener {
+}
+class PerformInitialCheckin <<static>> {
+}
+class GetDefaultServer {
+}
+IPlasticDialogCloser <|-- CreateWorkspaceView
+IWorkspacesRefreshableView <|-- CreateWorkspaceView
+CreateWorkspaceView +-- ICreateWorkspaceListener
+CreateWorkspaceView +-- PerformInitialCheckin
+CreateWorkspaceView +-- GetDefaultServer
+@enduml

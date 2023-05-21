@@ -1,0 +1,10 @@
+@startuml
+class IsCurrentTests {
+    + NullValuesTest() : void
+    + NotCurrentConflictTest() : void
+    + CurrentConflictTest() : void
+    + NotCurrentConflictWithMeta() : void
+    + CurrentConflictWithMetaCurrentIsNotTheMeta() : void
+    + CurrentConflictWithMetaCurrentIsTheMeta() : void
+}
+@enduml

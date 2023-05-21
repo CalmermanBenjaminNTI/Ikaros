@@ -1,0 +1,5 @@
+@startuml
+class PlasticApiMock {
+}
+IPlasticAPI <|-- PlasticApiMock
+@enduml

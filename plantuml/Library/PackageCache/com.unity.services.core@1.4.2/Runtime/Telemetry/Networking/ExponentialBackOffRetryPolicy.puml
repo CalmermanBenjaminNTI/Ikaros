@@ -1,0 +1,9 @@
+@startuml
+class ExponentialBackOffRetryPolicy {
+    + MaxTryCount : int <<get>> <<set>>
+    + BaseDelaySeconds : float <<get>> <<set>>
+    + CanRetry(webRequest:WebRequest, sendCount:int) : bool
+    + {static} IsTransientError(webRequest:WebRequest) : bool
+    + GetDelayBeforeSendingSeconds(sendCount:int) : float
+}
+@enduml

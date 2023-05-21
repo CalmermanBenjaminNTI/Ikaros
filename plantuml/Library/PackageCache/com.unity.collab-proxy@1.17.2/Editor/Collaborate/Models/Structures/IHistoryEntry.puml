@@ -1,0 +1,9 @@
+@startuml
+enum HistoryEntryStatus {
+    Ahead,
+    Current,
+    Behind,
+}
+interface IHistoryEntry {
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+interface IMainView {
+}
+class "IView`1"<T> {
+}
+"IView`1" "<IMainPresenter>" <|-- IMainView
+@enduml

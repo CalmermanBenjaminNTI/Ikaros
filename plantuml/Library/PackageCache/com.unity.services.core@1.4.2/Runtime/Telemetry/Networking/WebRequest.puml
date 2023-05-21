@@ -1,0 +1,15 @@
+@startuml
+enum WebRequestResult {
+    Success,
+    ConnectionError,
+    ProtocolError,
+    UnknownError,
+}
+class WebRequest <<struct>> {
+    + ErrorMessage : string
+    + ErrorBody : string
+    + ResponseCode : long
+    + IsSuccess : bool <<get>>
+}
+WebRequest --> "Result" WebRequestResult
+@enduml

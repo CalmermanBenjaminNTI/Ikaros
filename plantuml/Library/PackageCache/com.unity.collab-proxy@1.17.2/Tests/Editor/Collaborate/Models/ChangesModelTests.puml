@@ -1,0 +1,27 @@
+@startuml
+class ChangesModelTests {
+    + ChangesModel_NullSourceControlEntries_EmptyResultLists() : void
+    + ChangesModel_EmptySourceControlEntries_EmptyResultLists() : void
+    + ChangesModel_SingleSourceControlEntries_SingleUntoggledResult() : void
+    + ChangesModel_MultipleSourceControlEntries_ToggleSingle() : void
+    + ChangesModel_MultipleSourceControlEntries_ToggleAll() : void
+    + ChangesModel_MultipleSourceControlEntries_ToggleAllIndividually() : void
+    + ChangesModel_MultipleSourceControlEntries_UntoggleSingleFromAll() : void
+    + ChangesModel_MultipleSourceControlEntries_SomeConflicted() : void
+    + ChangesModel_InitializeFromDictionary_TransfersToggledFlag() : void
+    + ChangesModel_SearchFilters_CaseInsensitive() : void
+    + TestRequestInitialData() : void
+    + TestReceiveUpdatedChangeListEvent() : void
+    + TestRequestDiff() : void
+    + TestRequestDiscard() : void
+    + TestRequestPublish() : void
+}
+class TestableChangesModel {
+    + TestableChangesModel()
+    + SetToggled(toggled:Dictionary<string, bool>) : void
+    + <<override>> UpdateEntryToggle(path:string, value:bool) : bool
+}
+ChangesModelTests +-- TestableChangesModel
+ChangesModel <|-- TestableChangesModel
+TestableChangesModel --> "Provider" TestSourceControlProvider
+@enduml

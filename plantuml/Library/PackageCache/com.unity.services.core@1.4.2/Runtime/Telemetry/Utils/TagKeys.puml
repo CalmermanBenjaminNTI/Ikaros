@@ -1,0 +1,18 @@
+@startuml
+class TagKeys <<static>> {
+    + <<const>> ApplicationInstallMode : string = "application_install_mode"
+    + <<const>> OperatingSystem : string = "operating_system"
+    + <<const>> Platform : string = "platform"
+    + <<const>> UnityVersion : string = "unity_version"
+    + <<const>> PackageName : string = "package_name"
+    + <<const>> PackageVersion : string = "package_version"
+    + <<const>> DiagnosticName : string = "name"
+    + <<const>> DiagnosticMessage : string = "message"
+    + <<const>> ApplicationVersion : string = "application_version"
+    + <<const>> ProductName : string = "product_name"
+    + <<const>> CloudProjectId : string = "cloud_project_id"
+    + <<const>> EnvironmentName : string = "environment_name"
+    + <<const>> ApplicationGenuine : string = "application_genuine"
+    + <<const>> InternetReachability : string = "internet_reachability"
+}
+@enduml

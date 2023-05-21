@@ -1,0 +1,34 @@
+@startuml
+class TestChangesView {
+    + SetBusyStatusCount : int
+    + SetBusyStatusValue : bool?
+    + SetSearchQueryCount : int
+    + SetSearchQueryValue : string
+    + SetRevisionSummaryCount : int
+    + SetRevisionSummaryValue : string
+    + SetConflictsCount : int
+    + SetChangesCount : int
+    + SetToggledCountCount : int
+    + SetToggledCountValue : int?
+    + SetPublishEnabledCount : int
+    + SetPublishEnabledValue : bool?
+    + SetPublishEnabledReason : string
+    + DisplayDialogueCount : int
+    + SetBusyStatus(busy:bool) : void
+    + SetSearchQuery(query:string) : void
+    + SetRevisionSummary(message:string) : void
+    + SetConflicts(list:IReadOnlyList<IChangeEntryData>) : void
+    + SetChanges(list:IReadOnlyList<IChangeEntryData>) : void
+    + SetToggledCount(count:int) : void
+    + SetPublishEnabled(enabled:bool, reason:string) : void
+    + DisplayDialogue(title:string, message:string, affirmative:string) : bool
+    + DisplayDialogue(title:string, message:string, affirmative:string, negative:string) : bool
+    + SetSelectedChanges() : void
+}
+class "IReadOnlyList`1"<T> {
+}
+IChangesView <|-- TestChangesView
+TestChangesView --> "SetConflictsValue<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesView --> "SetChangesValue<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesView --> "Presenter" IChangesPresenter
+@enduml

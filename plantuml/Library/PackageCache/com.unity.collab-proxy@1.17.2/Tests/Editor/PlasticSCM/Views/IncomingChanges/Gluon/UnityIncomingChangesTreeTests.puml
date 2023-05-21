@@ -1,0 +1,23 @@
+@startuml
+class UnityIncomingChangesTreeTests {
+    + TestConflictNoMeta() : void
+    + TestConflictWithMeta() : void
+    + TestChangedNoMeta() : void
+    + TestChangedWithMeta() : void
+    + TestMovedNoMeta() : void
+    + TestMovedWithMeta() : void
+    + TestChangedMovedWithMeta() : void
+    + TestAddedNoMeta() : void
+    + TestAddedWithMeta() : void
+    + TestDeletedNoMeta() : void
+    + TestDeletedWithMeta() : void
+    + TestChangedWithDeletedMeta() : void
+    + TestOnlyMeta() : void
+}
+class Build {
+}
+class FindChangeInfo {
+}
+UnityIncomingChangesTreeTests +-- Build
+UnityIncomingChangesTreeTests +-- FindChangeInfo
+@enduml

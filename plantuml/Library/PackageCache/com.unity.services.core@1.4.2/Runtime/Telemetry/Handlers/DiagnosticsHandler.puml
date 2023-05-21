@@ -1,0 +1,15 @@
+@startuml
+class DiagnosticsHandler {
+    + DiagnosticsHandler(config:TelemetryConfig, cache:CachedPayload<DiagnosticsPayload>, scheduler:IActionScheduler, cachePersister:ICachePersister<DiagnosticsPayload>, sender:TelemetrySender)
+}
+class "TelemetryHandler`2"<T1,T2> {
+}
+class SendState {
+}
+class "CachedPayload`1"<T> {
+}
+"TelemetryHandler`2" "<DiagnosticsPayload,Diagnostic>" <|-- DiagnosticsHandler
+DiagnosticsHandler +-- SendState
+SendState --> "Self" DiagnosticsHandler
+SendState --> "Payload<DiagnosticsPayload>" "CachedPayload`1"
+@enduml

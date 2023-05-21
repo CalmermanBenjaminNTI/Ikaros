@@ -1,0 +1,15 @@
+@startuml
+class PlayModeTestListGUI {
+    + <<override>> PrintHeadPanel() : void
+    + <<override>> RenderNoTestsInfo() : void
+}
+class PlayerMenuItem <<struct>> {
+    + filterSelectedTestsOnly : bool
+    + buildOnly : bool
+}
+TestListGUI <|-- PlayModeTestListGUI
+PlayModeTestListGUI --> "TestMode" TestMode
+PlayModeTestListGUI --> "TestPlatform" TestPlatform
+PlayModeTestListGUI +-- PlayerMenuItem
+PlayerMenuItem --> "name" GUIContent
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class UnityIncomingChangesTreeTests {
+    + TestConflictNoMeta() : void
+    + TestConflictWithMeta() : void
+    + TestChangedNoMeta() : void
+    + TestChangedWithMeta() : void
+    + TestMovedNoMeta() : void
+    + TestMovedWithMeta() : void
+    + TestChangedMovedWithMeta() : void
+    + TestAddedNoMeta() : void
+    + TestAddedWithMeta() : void
+    + TestDeletedNoMeta() : void
+    + TestDeletedWithMeta() : void
+    + TestOnlyMeta() : void
+    + TestDirectoryConflictNoMeta() : void
+    + TestDirectoryConflictWithMeta() : void
+    + TestChangedWithDeletedMeta() : void
+}
+class BuildMergeTreeResult {
+}
+class GetConflictResolutionMock {
+}
+class FindChangeInfo {
+}
+UnityIncomingChangesTreeTests +-- BuildMergeTreeResult
+UnityIncomingChangesTreeTests +-- GetConflictResolutionMock
+UnityIncomingChangesTreeTests +-- FindChangeInfo
+@enduml

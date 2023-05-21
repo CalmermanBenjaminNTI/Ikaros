@@ -1,0 +1,12 @@
+@startuml
+enum ProjectStatus {
+    Unbound,
+    Offline,
+    Maintenance,
+    LoggedOut,
+    NoSeat,
+    Bound,
+    Loading,
+    Ready,
+}
+@enduml

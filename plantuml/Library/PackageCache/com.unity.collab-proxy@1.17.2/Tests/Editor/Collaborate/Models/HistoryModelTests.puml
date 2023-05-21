@@ -1,0 +1,14 @@
+@startuml
+class HistoryModelTests {
+    + Setup() : void
+    + TearDown() : void
+    + TestHistoryListUpdated() : void
+    + TestIsBusyAndEntryCount() : void
+    + TestRequestingPageOfRevisions() : void
+    + TestRequestingSingleRevision() : void
+    + TestRequestUpdateTo() : void
+    + TestRequestRestoreTo() : void
+    + TestRequestGoBackTo() : void
+    + TestRevert() : void
+}
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class ProgressInfo <<struct>> {
+    + ProgressInfo(title:string, details:string, currentCount:int, totalCount:int, lastErrorString:string, lastError:ulong, canCancel:bool, percentageProgressType:bool, percentageComplete:int)
+    + Title : string <<get>>
+    + Details : string <<get>>
+    + CurrentCount : int <<get>>
+    + TotalCount : int <<get>>
+    + LastErrorString : string <<get>>
+    + LastError : ulong <<get>>
+    + CanCancel : bool <<get>>
+    + PercentageProgressType : bool <<get>>
+    + PercentageComplete : int <<get>>
+}
+IProgressInfo <|-- ProgressInfo
+@enduml

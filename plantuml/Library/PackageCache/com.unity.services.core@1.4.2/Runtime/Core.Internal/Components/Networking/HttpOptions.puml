@@ -1,0 +1,6 @@
+@startuml
+class HttpOptions <<struct>> {
+    + RequestTimeoutInSeconds : int
+    + RedirectLimit : int
+}
+@enduml

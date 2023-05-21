@@ -1,0 +1,16 @@
+@startuml
+class UnityPendingChangesTreeTests {
+    + TestAddedNoMeta() : void
+    + TestAddedWithMeta() : void
+    + TestFileAddedMetaPrivate() : void
+    + TestDeletedNoMeta() : void
+    + TestDeletedWithMeta() : void
+    + TestChangedNoMeta() : void
+    + TestChangedWithMeta() : void
+    + TestMovedNoMeta() : void
+    + TestMovedWithMeta() : void
+    + TestOnlyMeta() : void
+    + TestCheckedChangesWithMeta() : void
+    + TestCheckedChangesWithDependenciesCandidates() : void
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class "BaseListAdapter`1"<T> {
+    + {abstract} Height : int <<get>>
+    + {abstract} GetEntryCount() : int
+    + RegisterObserver(observer:IAdapterObserver) : void
+    + DeregisterObserver(observer:IAdapterObserver) : void
+    + NotifyDataSetChanged() : void
+}
+IAdapter <|-- "BaseListAdapter`1"
+@enduml

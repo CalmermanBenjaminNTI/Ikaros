@@ -1,0 +1,7 @@
+@startuml
+class AccessTokens {
+    + AccessTokens()
+    + {static} GetGenesisToken() : string
+    + <<async>> GetServicesGatewayTokenAsync() : Task<string>
+}
+@enduml

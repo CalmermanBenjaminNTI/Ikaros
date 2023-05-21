@@ -1,0 +1,12 @@
+@startuml
+class "MinimumBinaryHeap`1"<T> {
+    + Count : int <<get>>
+    + Min : T <<get>>
+    + MinimumBinaryHeap(capacity:int)
+    + Insert(data:T) : void
+    + Remove(data:T) : void
+    + ExtractMin() : T
+}
+class "IComparable`1"<T> {
+}
+@enduml

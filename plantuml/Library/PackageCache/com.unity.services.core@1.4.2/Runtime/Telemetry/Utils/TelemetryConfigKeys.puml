@@ -1,0 +1,10 @@
+@startuml
+class TelemetryConfigKeys <<static>> {
+    + <<const>> TargetUrl : string
+    + <<const>> ServicePath : string
+    + <<const>> PayloadExpirationSeconds : string
+    + <<const>> PayloadSendingMaxIntervalSeconds : string
+    + <<const>> SafetyPersistenceIntervalSeconds : string
+    + <<const>> MaxMetricCountPerPayload : string
+}
+@enduml

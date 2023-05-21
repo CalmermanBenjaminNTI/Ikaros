@@ -1,0 +1,9 @@
+@startuml
+class VisualStudioIntegration {
+}
+class Client {
+}
+VisualStudioIntegration +-- Client
+Client --> "EndPoint" IPEndPoint
+Client --> "LastMessage" DateTime
+@enduml

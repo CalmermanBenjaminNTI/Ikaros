@@ -1,0 +1,7 @@
+@startuml
+class AdvancedSpaceShip {
+    + AdvancedSpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float, hoverSpeed:Vector3)
+    + Hover(t:Transform, v:Vector3) : Vector3
+}
+SpaceShip <|-- AdvancedSpaceShip
+@enduml

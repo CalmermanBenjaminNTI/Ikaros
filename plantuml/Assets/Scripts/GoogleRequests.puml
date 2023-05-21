@@ -1,0 +1,17 @@
+@startuml
+class GoogleRequests {
+    + GetHighScore() : void
+    + SetData(score:string) : void
+}
+class Highscores {
+}
+class Highscore {
+    + player : string
+    + highscore : string
+    + {static} GetHighscoreByPlayer(highscores:List<Highscore>, player:string) : string
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- GoogleRequests
+Highscores --> "data<Highscore>" "List`1"
+@enduml

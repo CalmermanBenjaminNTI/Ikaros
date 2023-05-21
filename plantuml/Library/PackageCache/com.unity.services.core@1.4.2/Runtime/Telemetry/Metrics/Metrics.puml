@@ -1,0 +1,6 @@
+@startuml
+class Metrics {
+    + Metrics(handler:MetricsHandler, packageTags:IDictionary<string, string>)
+}
+IMetrics <|-- Metrics
+@enduml

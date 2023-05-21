@@ -1,0 +1,6 @@
+@startuml
+class "CachedPayload`1"<TPayload> {
+    + TimeOfOccurenceTicks : long
+    + Payload : TPayload
+}
+@enduml

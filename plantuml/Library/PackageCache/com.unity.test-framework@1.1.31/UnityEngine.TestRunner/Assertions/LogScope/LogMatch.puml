@@ -1,0 +1,9 @@
+@startuml
+class LogMatch {
+    + Message : string <<get>> <<set>>
+    + LogType : LogType? <<get>> <<set>>
+    + Matches(log:LogEvent) : bool
+    + <<override>> ToString() : string
+}
+LogMatch --> "MessageRegex" Regex
+@enduml

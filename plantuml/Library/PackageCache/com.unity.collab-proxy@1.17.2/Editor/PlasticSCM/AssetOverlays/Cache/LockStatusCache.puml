@@ -1,0 +1,10 @@
+@startuml
+class LockStatusCache {
+}
+class FillLockCandidates <<static>> {
+}
+class BuildStatusByNodeCache <<static>> {
+}
+LockStatusCache +-- FillLockCandidates
+LockStatusCache +-- BuildStatusByNodeCache
+@enduml

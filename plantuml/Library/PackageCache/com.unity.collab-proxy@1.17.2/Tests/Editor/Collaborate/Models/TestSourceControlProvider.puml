@@ -1,0 +1,78 @@
+@startuml
+class TestSourceControlProvider {
+    + RequestedHistoryRevisionCount : int
+    + RequestedHistoryRevisionId : string
+    + RequestedHistoryListCount : int
+    + RequestedHistoryListOffset : int?
+    + RequestedHistoryListSize : int?
+    + RequestedHistoryCountCount : int
+    + RequestedUpdateToCount : int
+    + RequestedUpdateToRevisionId : string
+    + RequestedRestoreToCount : int
+    + RequestedRestoreToRevisionId : string
+    + RequestedGoBackToCount : int
+    + RequestedGoBackToRevisionId : string
+    + RequestedRevertCount : int
+    + RequestedRevertRevisionId : string
+    + RequestedRevertFileCount : int?
+    + RequestedChangeListCount : int
+    + RequestedDiscardCount : int
+    + RequestedBulkDiscardCount : int
+    + RequestedDiffChangesCount : int
+    + RequestedDiffChangesPath : string
+    + RequestedPublishCount : int
+    + RequestedPublishMessage : string
+    + RemoteRevisionAvailability : bool = false
+    + ConflictedState : bool = false
+    +  <<event>> UpdatedChangeList : Action 
+    +  <<event>> UpdatedHistoryEntries : Action 
+    +  <<event>> UpdatedConflictState : Action<bool> 
+    +  <<event>> UpdatedRemoteRevisionsAvailability : Action<bool> 
+    +  <<event>> UpdatedProjectStatus : Action<ProjectStatus> 
+    +  <<event>> UpdatedOperationStatus : Action<bool> 
+    +  <<event>> UpdatedOperationProgress : Action<IProgressInfo> 
+    +  <<event>> ErrorOccurred : Action<IErrorInfo> 
+    +  <<event>> ErrorCleared : Action 
+    +  <<event>> UpdatedSelectedChangeList : Action<IReadOnlyList<string>> 
+    + GetRemoteRevisionAvailability() : bool
+    + GetConflictedState() : bool
+    + GetProgressState() : IProgressInfo
+    + GetErrorState() : IErrorInfo
+    + GetProjectStatus() : ProjectStatus
+    + RequestChangeList(callback:Action<IReadOnlyList<IChangeEntry>>) : void
+    + RequestPublish(message:string, changes:IReadOnlyList<IChangeEntry>) : void
+    + TriggerUpdatedHistoryEntries() : void
+    + TriggerUpdatedChangeEntries() : void
+    + RequestHistoryEntry(revisionId:string, callback:Action<IHistoryEntry>) : void
+    + RequestHistoryPage(offset:int, pageSize:int, callback:Action<IReadOnlyList<IHistoryEntry>>) : void
+    + RequestHistoryCount(callback:Action<int?>) : void
+    + RequestDiscard(entry:IChangeEntry) : void
+    + RequestBulkDiscard(entries:IReadOnlyList<IChangeEntry>) : void
+    + RequestDiffChanges(path:string) : void
+    + SupportsRevert : bool <<get>> = false
+    + RequestRevert(revisionId:string, files:IReadOnlyList<string>) : void
+    + RequestUpdateTo(revisionId:string) : void
+    + RequestRestoreTo(revisionId:string) : void
+    + RequestGoBackTo(revisionId:string) : void
+    + ClearError() : void
+    + RequestShowConflictedDifferences(path:string) : void
+    + RequestChooseMerge(path:string) : void
+    + RequestChooseMine(paths:string[]) : void
+    + RequestChooseRemote(paths:string[]) : void
+    + RequestSync() : void
+    + RequestCancelJob() : void
+    + RequestTurnOnService() : void
+    + ShowServicePage() : void
+    + ShowLoginPage() : void
+    + ShowNoSeatPage() : void
+}
+class "Action`1"<T> {
+}
+class "IReadOnlyList`1"<T> {
+}
+ISourceControlProvider <|-- TestSourceControlProvider
+TestSourceControlProvider --> "RequestedChangeListCallback<IReadOnlyList<IChangeEntry>>" "Action`1"
+TestSourceControlProvider --> "RequestedDiscardEntry" IChangeEntry
+TestSourceControlProvider --> "RequestedBulkDiscardPaths<IChangeEntry>" "IReadOnlyList`1"
+TestSourceControlProvider --> "RequestedPublishList<IChangeEntry>" "IReadOnlyList`1"
+@enduml

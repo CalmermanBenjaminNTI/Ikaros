@@ -1,0 +1,5 @@
+@startuml
+class PlayerCamera {
+}
+MonoBehaviour <|-- PlayerCamera
+@enduml

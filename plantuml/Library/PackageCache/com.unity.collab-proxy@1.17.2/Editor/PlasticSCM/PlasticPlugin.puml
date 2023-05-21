@@ -1,0 +1,6 @@
+@startuml
+class PlasticPlugin <<static>> {
+    + {static}  <<event>> OnNotificationUpdated : Action 
+    + {static} GetPluginIcon() : Texture
+}
+@enduml

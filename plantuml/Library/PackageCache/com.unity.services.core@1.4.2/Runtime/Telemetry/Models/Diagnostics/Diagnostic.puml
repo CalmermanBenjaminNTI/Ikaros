@@ -1,0 +1,8 @@
+@startuml
+class Diagnostic <<struct>> {
+}
+class "IDictionary`2"<T1,T2> {
+}
+ITelemetryEvent <|-- Diagnostic
+Diagnostic --> "Content<string,string>" "IDictionary`2"
+@enduml

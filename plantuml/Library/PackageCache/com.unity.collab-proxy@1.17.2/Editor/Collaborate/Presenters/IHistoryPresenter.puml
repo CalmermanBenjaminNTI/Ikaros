@@ -1,0 +1,5 @@
+@startuml
+interface IHistoryPresenter {
+}
+IPresenter <|-- IHistoryPresenter
+@enduml

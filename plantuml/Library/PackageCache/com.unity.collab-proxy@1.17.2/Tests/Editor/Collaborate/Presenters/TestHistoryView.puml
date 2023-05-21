@@ -1,0 +1,24 @@
+@startuml
+class TestHistoryView {
+    + DialogueReturnValue : bool = true
+    + BusyStatus : bool?
+    + Page : int?
+    + MaxPage : int?
+    + DialogueTitle : string
+    + DialogueMessage : string
+    + DialogueAffirmative : string
+    + DialogueNegative : string
+    + SetBusyStatus(busy:bool) : void
+    + SetHistoryList(list:IReadOnlyList<IHistoryEntry>) : void
+    + SetPage(page:int, max:int) : void
+    + SetSelection(entry:IHistoryEntry) : void
+    + DisplayDialogue(title:string, message:string, affirmative:string) : bool
+    + DisplayDialogue(title:string, message:string, affirmative:string, negative:string) : bool
+}
+class "IReadOnlyList`1"<T> {
+}
+IHistoryView <|-- TestHistoryView
+TestHistoryView --> "Presenter" IHistoryPresenter
+TestHistoryView --> "ReceivedEntry" IHistoryEntry
+TestHistoryView --> "ReceivedList<IHistoryEntry>" "IReadOnlyList`1"
+@enduml

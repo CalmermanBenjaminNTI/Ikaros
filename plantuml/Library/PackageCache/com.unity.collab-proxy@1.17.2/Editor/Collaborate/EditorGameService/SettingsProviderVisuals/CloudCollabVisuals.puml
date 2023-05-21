@@ -1,0 +1,29 @@
+@startuml
+class CloudCollabVisuals {
+    + Init(editorGameService:IEditorGameService) : void
+    + GetVisuals() : VisualElement
+}
+class Uxml <<static>> {
+}
+class Uss <<static>> {
+}
+class Path <<static>> {
+    + <<const>> Disabled : string = "Packages/com.unity.collab-proxy/Editor/Collaborate/EditorGameService/SettingsProviderVisuals/UXML/CollabProjectSettingsDisabled.uxml"
+    + <<const>> Enabled : string = "Packages/com.unity.collab-proxy/Editor/Collaborate/EditorGameService/SettingsProviderVisuals/UXML/CollabProjectSettingsEnabled.uxml"
+}
+class Node <<static>> {
+    + <<const>> PublishSection : string = "CollabPublishSection"
+    + <<const>> HistorySection : string = "CollabHistorySection"
+    + <<const>> OpenHistoryLink : string = "OpenHistory"
+    + <<const>> OpenChangesLink : string = "OpenChanges"
+    + <<const>> GoToStorageLink : string = "GoToWebDashboard"
+    + <<const>> LearnMoreLink : string = "LearnMore"
+}
+class Path <<static>> {
+    + <<const>> Common : string = "Packages/com.unity.collab-proxy/Editor/Collaborate/EditorGameService/SettingsProviderVisuals/USS/ServicesProjectSettingsCommon.uss"
+}
+IVisuals <|-- CloudCollabVisuals
+Uxml +-- Path
+Uxml +-- Node
+Uss +-- Path
+@enduml

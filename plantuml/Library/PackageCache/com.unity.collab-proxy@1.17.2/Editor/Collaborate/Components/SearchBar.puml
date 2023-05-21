@@ -1,0 +1,20 @@
+@startuml
+class SearchBar {
+    + <<const>> UssClassName : string = "unity-search-bar"
+    + <<const>> SearchFieldUssClassName : string
+    + <<const>> PlaceholderUssClassName : string
+    + <<const>> timeoutMilliseconds : int = 1000
+    +  <<event>> Search : Action<string> 
+    + SearchBar()
+    + SearchBar(searchEvent:Action<string>)
+    + Value : string <<get>> <<set>>
+    + SetValueWithoutNotify(value:string) : void
+}
+class UxmlFactory <<new>> {
+}
+class "UxmlFactory`1"<T> {
+}
+VisualElement <|-- SearchBar
+SearchBar +-- UxmlFactory
+"UxmlFactory`1" "<SearchBar>" <|-- UxmlFactory
+@enduml

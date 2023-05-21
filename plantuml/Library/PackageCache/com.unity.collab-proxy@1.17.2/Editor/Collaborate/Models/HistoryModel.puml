@@ -1,0 +1,29 @@
+@startuml
+class HistoryModel {
+    +  <<event>> HistoryListUpdated : Action 
+    +  <<event>> HistoryListReceived : Action<IReadOnlyList<IHistoryEntry>> 
+    +  <<event>> SelectedRevisionReceived : Action<IHistoryEntry> 
+    +  <<event>> BusyStatusUpdated : Action<bool> 
+    +  <<event>> EntryCountUpdated : Action<int?> 
+    +  <<event>> StateChanged : Action 
+    + HistoryModel(provider:ISourceControlProvider)
+    + OnStart() : void
+    + OnStop() : void
+    + RestoreState(cache:IWindowCache) : void
+    + SaveState(cache:IWindowCache) : void
+    + RequestPageOfRevisions(pageSize:int) : void
+    + RequestSingleRevision(revisionId:string) : void
+    + RequestEntryNumber() : void
+    + RequestUpdateTo(revisionId:string) : void
+    + RequestRestoreTo(revisionId:string) : void
+    + RequestGoBackTo(revisionId:string) : void
+    + SupportsRevert : bool <<get>>
+    + RequestRevert(revisionId:string, files:IReadOnlyList<string>) : void
+    + Busy : bool <<get>>
+    + PageNumber : int <<get>> <<set>>
+    + SelectedRevisionId : string <<get>>
+    + SavedRevisionId : string <<get>>
+    + IsRevisionSelected : bool <<get>>
+}
+IHistoryModel <|-- HistoryModel
+@enduml

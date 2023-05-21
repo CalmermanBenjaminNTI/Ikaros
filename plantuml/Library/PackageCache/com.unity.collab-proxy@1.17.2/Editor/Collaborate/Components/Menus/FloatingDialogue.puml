@@ -1,0 +1,8 @@
+@startuml
+class FloatingDialogue {
+    + <<const>> UssClassName : string = "unity-floating-dialogue"
+    + <<override>> canGrabFocus : bool <<get>>
+}
+VisualElement <|-- FloatingDialogue
+FloatingDialogue --> "Instance" FloatingDialogue
+@enduml

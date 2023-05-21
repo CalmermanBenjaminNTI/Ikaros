@@ -1,0 +1,7 @@
+@startuml
+class EditorVersionTests {
+    + EditorVersionTests_Equals() : void
+    + EditorVersionTests_Newer() : void
+    + EditorVersionTests_Older() : void
+}
+@enduml

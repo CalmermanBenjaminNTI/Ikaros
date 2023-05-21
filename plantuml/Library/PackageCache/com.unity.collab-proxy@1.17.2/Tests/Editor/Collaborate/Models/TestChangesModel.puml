@@ -1,0 +1,71 @@
+@startuml
+class TestChangesModel {
+    + UpdateEntryToggleCount : int
+    + UpdateEntryTogglePath : string
+    + UpdateEntryToggleValue : bool?
+    + GetToggledEntriesCount : int
+    + GetToggledEntriesQuery : string
+    + GetUntoggledEntriesCount : int
+    + GetUntoggledEntriesQuery : string
+    + GetAllEntriesCount : int
+    + GetAllEntriesQuery : string
+    + GetConflictedEntriesCount : int
+    + GetConflictedEntriesQuery : string
+    + RequestInitialDataCount : int
+    + RequestDiscardCount : int
+    + RequestBulkDiscardCount : int
+    + RequestDiffCount : int
+    + RequestDiffPath : string
+    + RequestPublishCount : int
+    +  <<event>> UpdatedChangeList : Action 
+    +  <<event>> BusyStatusUpdated : Action<bool> 
+    +  <<event>> OnUpdatedSelectedChanges : Action 
+    +  <<event>> StateChanged : Action 
+    + SavedRevisionSummary : string <<get>> <<set>> = ""
+    + SavedSearchQuery : string <<get>> <<set>> = ""
+    + ToggledCount : int <<get>>
+    + TotalCount : int <<get>>
+    + ConflictedCount : int <<get>>
+    + Conflicted : bool <<get>>
+    + Busy : bool <<get>> <<set>>
+    + TriggerUpdatedChangeList() : void
+    + TriggerBusyStatusUpdated(value:bool) : void
+    + UpdateEntryToggle(path:string, toggled:bool) : bool
+    + GetToggledEntries(query:string) : IReadOnlyList<IChangeEntryData>
+    + GetUntoggledEntries(query:string) : IReadOnlyList<IChangeEntryData>
+    + GetAllEntries(query:string) : IReadOnlyList<IChangeEntryData>
+    + GetConflictedEntries(query:string) : IReadOnlyList<IChangeEntryData>
+    + RequestInitialData() : void
+    + RequestDiffChanges(path:string) : void
+    + RequestDiscard(entry:IChangeEntry) : void
+    + RequestBulkDiscard(paths:IReadOnlyList<IChangeEntry>) : void
+    + RequestPublish(message:string, changes:IReadOnlyList<IChangeEntry>) : void
+    + RequestShowConflictedDifferences(path:string) : void
+    + RequestChooseMerge(path:string) : void
+    + RequestChooseMine(paths:string[]) : void
+    + RequestChooseRemote(paths:string[]) : void
+    + OnStart() : void
+    + OnStop() : void
+    + RestoreState(cache:IWindowCache) : void
+    + SaveState(cache:IWindowCache) : void
+}
+class "IReadOnlyList`1"<T> {
+}
+class ChangeEntryData {
+    + Toggled : bool <<get>> <<set>>
+    + All : bool <<get>> <<set>>
+    + ToggleReadOnly : bool <<get>> <<set>>
+    + Conflicted : bool <<get>> <<set>>
+}
+IChangesModel <|-- TestChangesModel
+TestChangesModel --> "RequestDiscardEntry" IChangeEntry
+TestChangesModel --> "RequestBulkDiscardPaths<IChangeEntry>" "IReadOnlyList`1"
+TestChangesModel --> "RequestPublishList<IChangeEntry>" "IReadOnlyList`1"
+TestChangesModel o-> "UntoggledEntries<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesModel o-> "ToggledEntries<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesModel o-> "AllEntries<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesModel o-> "ConflictedEntries<IChangeEntryData>" "IReadOnlyList`1"
+TestChangesModel +-- ChangeEntryData
+IChangeEntryData <|-- ChangeEntryData
+ChangeEntryData --> "Entry" IChangeEntry
+@enduml

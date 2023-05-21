@@ -1,0 +1,16 @@
+@startuml
+abstract class FileCachePersister {
+}
+class "FileCachePersister`1"<TPayload> {
+    + FileCachePersister(fileName:string)
+    + FilePath : string <<get>>
+    + CanPersist : bool <<get>>
+    + Persist(cache:CachedPayload<TPayload>) : void
+    + TryFetch(persistedCache:CachedPayload<TPayload>) : bool
+    + Delete() : void
+}
+class "ICachePersister`1"<T> {
+}
+FileCachePersister <|-- "FileCachePersister`1"
+"ICachePersister`1" "<TPayload>" <|-- "FileCachePersister`1"
+@enduml

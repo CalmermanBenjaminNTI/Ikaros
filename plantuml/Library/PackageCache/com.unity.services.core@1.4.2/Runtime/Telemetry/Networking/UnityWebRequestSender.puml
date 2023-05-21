@@ -1,0 +1,6 @@
+@startuml
+class UnityWebRequestSender {
+    + SendRequest(request:UnityWebRequest, callback:Action<WebRequest>) : void
+}
+IUnityWebRequestSender <|-- UnityWebRequestSender
+@enduml

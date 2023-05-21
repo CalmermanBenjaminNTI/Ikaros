@@ -1,0 +1,9 @@
+@startuml
+class LockedComponentRegistry {
+    + LockedComponentRegistry(registryToLock:IComponentRegistry)
+    + RegisterServiceComponent(component:TComponent) : void
+    + GetServiceComponent() : TComponent
+    + ResetProvidedComponents(componentTypeHashToInstance:IDictionary<int, IServiceComponent>) : void
+}
+IComponentRegistry <|-- LockedComponentRegistry
+@enduml

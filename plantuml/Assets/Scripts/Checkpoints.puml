@@ -1,0 +1,6 @@
+@startuml
+class Checkpoints {
+    + BestTime : string <<get>> <<set>>
+}
+MonoBehaviour <|-- Checkpoints
+@enduml

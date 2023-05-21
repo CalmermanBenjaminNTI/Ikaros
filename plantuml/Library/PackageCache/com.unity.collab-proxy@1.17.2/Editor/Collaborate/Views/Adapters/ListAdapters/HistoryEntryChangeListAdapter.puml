@@ -1,0 +1,10 @@
+@startuml
+class HistoryEntryChangeListAdapter {
+    + HistoryEntryChangeListAdapter(presenter:IHistoryPresenter, revisionId:string, list:IList<IChangeEntry>)
+    + <<override>> Height : int <<get>>
+    + <<override>> GetEntryCount() : int
+}
+class "BaseListAdapter`1"<T> {
+}
+"BaseListAdapter`1" "<HistoryChangeListElement>" <|-- HistoryEntryChangeListAdapter
+@enduml

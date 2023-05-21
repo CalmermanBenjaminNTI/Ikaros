@@ -1,0 +1,33 @@
+@startuml
+class ChangesPresenterTests {
+    + Setup() : void
+    + TearDown() : void
+    + TestToggledCountValue() : void
+    + TestTotalCountValue() : void
+    + TestConflictedCountValue() : void
+    + TestSearchingValue() : void
+    + TestSettingEntryToggle() : void
+    + TestRequestPublish() : void
+    + TestRequestPublishFailWhenSearching() : void
+    + TestRequestDiscard() : void
+    + TestRequestDiffChanges() : void
+    + TestSetSearchQuery() : void
+    + TestHavingSearchQueryDisablesPublish() : void
+    + TestHavingConflictsDisablesPublish() : void
+    + TestSetRevisionService() : void
+    + TestReceivingBusyMessage() : void
+    + TestOnUpdatedChangeListUpdatesPublishButton() : void
+    + TestOnPartialChangesUpdatesPublishButton() : void
+    + TestOnRemoteRevisionsAvailabilityChangeUpdatesPublishButton() : void
+    + TestOnConflictStatusChangeUpdatesPublishButton() : void
+}
+class TestableChangesPresenter {
+    + TestableChangesPresenter(view:IChangesView, model:IChangesModel, mainModel:IMainModel)
+    + NotifyOnRemoteRevisionsAvailabilityChange(available:bool) : void
+    + NotifyOnUpdatedChangeList() : void
+    + NotifyOnUpdatedPartiallySelectedChanges() : void
+    + NotifyOnConflictStatusChange(conflicted:bool) : void
+}
+ChangesPresenterTests +-- TestableChangesPresenter
+ChangesPresenter <|-- TestableChangesPresenter
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class TabView {
+}
+VisualElement <|-- TabView
+@enduml

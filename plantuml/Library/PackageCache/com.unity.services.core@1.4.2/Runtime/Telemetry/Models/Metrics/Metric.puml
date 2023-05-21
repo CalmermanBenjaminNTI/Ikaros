@@ -1,0 +1,11 @@
+@startuml
+class Metric <<struct>> {
+    + Name : string
+    + Value : double
+}
+class "IDictionary`2"<T1,T2> {
+}
+ITelemetryEvent <|-- Metric
+Metric --> "Type" MetricType
+Metric --> "Tags<string,string>" "IDictionary`2"
+@enduml

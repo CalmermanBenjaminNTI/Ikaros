@@ -1,0 +1,4 @@
+@startuml
+interface "IView`1"<in T> {
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class CoreRegistry <<sealed>> {
+    + RegisterPackage(package:TPackage) : CoreRegistration
+    + RegisterServiceComponent(component:TComponent) : void
+    + GetServiceComponent() : TComponent
+}
+CoreRegistry --> "Instance" CoreRegistry
+@enduml

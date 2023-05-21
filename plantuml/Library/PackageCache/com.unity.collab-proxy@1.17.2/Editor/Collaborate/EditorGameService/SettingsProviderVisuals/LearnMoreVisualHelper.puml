@@ -1,0 +1,5 @@
+@startuml
+class LearnMoreVisualHelper <<static>> {
+    + {static} SetupLearnMore(containerUI:VisualElement) : void
+}
+@enduml

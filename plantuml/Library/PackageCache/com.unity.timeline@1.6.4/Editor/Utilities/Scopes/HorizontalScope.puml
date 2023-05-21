@@ -1,0 +1,8 @@
+@startuml
+class HorizontalScope <<struct>> {
+    + HorizontalScope(content:GUIContent, style:GUIStyle)
+    + Dispose() : void
+}
+IDisposable <|-- HorizontalScope
+HorizontalScope --> "rect" Rect
+@enduml

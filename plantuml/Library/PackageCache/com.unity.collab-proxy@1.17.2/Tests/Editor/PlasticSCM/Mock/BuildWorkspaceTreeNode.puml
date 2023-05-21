@@ -1,0 +1,4 @@
+@startuml
+class BuildWorkspaceTreeNode <<static>> {
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class UnityDiffTreeTests {
+    + TestAddedNoMeta() : void
+    + TestChangedNoMeta() : void
+    + TestDeletedNoMeta() : void
+    + TestMovedNoMeta() : void
+    + TestFsPermissionsNoMeta() : void
+    + TestMergedNoMeta() : void
+    + TestAddedWithMeta() : void
+    + TestChangedWithMeta() : void
+    + TestDeletedWithMeta() : void
+    + TestMovedWithMeta() : void
+    + TestFsPermissionsWithMeta() : void
+    + TestMergedWithMeta() : void
+    + TestChangeWithDeletedMeta() : void
+}
+class Build <<static>> {
+}
+class FindClientDiffInfo <<static>> {
+}
+UnityDiffTreeTests +-- Build
+UnityDiffTreeTests +-- FindClientDiffInfo
+@enduml

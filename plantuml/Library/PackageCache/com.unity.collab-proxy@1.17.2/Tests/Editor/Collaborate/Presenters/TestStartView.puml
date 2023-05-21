@@ -1,0 +1,10 @@
+@startuml
+class TestStartView {
+    + buttonVisible : bool
+    + Text : string <<get>> <<set>>
+    + ButtonText : string <<get>> <<set>>
+    + SetButtonVisible(isVisible:bool) : void
+}
+IStartView <|-- TestStartView
+TestStartView --> "Presenter" IStartPresenter
+@enduml

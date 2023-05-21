@@ -1,0 +1,9 @@
+@startuml
+class StartPresenter {
+    + StartPresenter(view:IStartView, model:IStartModel)
+    + Start() : void
+    + Stop() : void
+    + RequestStart() : void
+}
+IStartPresenter <|-- StartPresenter
+@enduml

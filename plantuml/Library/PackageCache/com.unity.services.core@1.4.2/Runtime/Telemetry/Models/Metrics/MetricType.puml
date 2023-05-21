@@ -1,0 +1,7 @@
+@startuml
+enum MetricType {
+    Gauge= 0,
+    Sum= 1,
+    Histogram= 2,
+}
+@enduml

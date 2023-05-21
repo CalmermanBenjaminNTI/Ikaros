@@ -1,0 +1,23 @@
+@startuml
+class ToggleableChangeListElement {
+    + <<new>> <<const>> UssClassName : string = "toggleable-change-list-element"
+    + <<const>> ToggleUssClassName : string
+    + <<const>> StatusIconUssClassName : string
+    + <<const>> DiffButtonUssClassName : string
+    + <<const>> DiscardButtonUssClassName : string
+    + ToggleableChangeListElement()
+    + SetToggleCallback(callback:Action<bool>) : void
+    + <<override>> ClearData() : void
+}
+class UxmlFactory <<new>> {
+}
+class "UxmlFactory`1"<T> {
+}
+BaseChangeListElement <|-- ToggleableChangeListElement
+ToggleableChangeListElement --> "toggle" Toggle
+ToggleableChangeListElement --> "diffButton" IconButton
+ToggleableChangeListElement --> "discardButton" IconButton
+ToggleableChangeListElement --> "statusIcon" VisualElement
+ToggleableChangeListElement +-- UxmlFactory
+"UxmlFactory`1" "<ToggleableChangeListElement>" <|-- UxmlFactory
+@enduml

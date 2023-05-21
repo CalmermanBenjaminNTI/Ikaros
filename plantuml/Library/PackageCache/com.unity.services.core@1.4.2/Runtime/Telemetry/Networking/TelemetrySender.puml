@@ -1,0 +1,7 @@
+@startuml
+class TelemetrySender {
+    + TargetUrl : string <<get>>
+    + TelemetrySender(targetUrl:string, servicePath:string, scheduler:IActionScheduler, retryPolicy:ExponentialBackOffRetryPolicy, requestSender:IUnityWebRequestSender)
+    + SendAsync(payload:TPayload) : Task
+}
+@enduml

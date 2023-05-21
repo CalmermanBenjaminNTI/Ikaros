@@ -1,0 +1,8 @@
+@startuml
+class CoreMetrics {
+    + SendAllPackagesInitSuccessMetric() : void
+    + SendAllPackagesInitTimeMetric(initTimeSeconds:double) : void
+    + SendCorePackageInitTimeMetric(initTimeSeconds:double) : void
+}
+CoreMetrics --> "Instance" CoreMetrics
+@enduml

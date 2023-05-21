@@ -1,0 +1,6 @@
+@startuml
+class PlayerTestAssemblyProvider {
+    + GetTestsWithNUnit() : ITest
+    + GetUserAssemblies() : List<IAssemblyWrapper>
+}
+@enduml

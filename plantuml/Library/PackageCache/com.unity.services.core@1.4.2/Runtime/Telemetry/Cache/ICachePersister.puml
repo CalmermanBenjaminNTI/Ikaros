@@ -1,0 +1,4 @@
+@startuml
+interface "ICachePersister`1"<TPayload> {
+}
+@enduml

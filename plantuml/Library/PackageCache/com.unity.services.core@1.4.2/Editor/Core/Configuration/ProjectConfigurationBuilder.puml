@@ -1,0 +1,12 @@
+@startuml
+class ProjectConfigurationBuilder {
+    + ProjectConfigurationBuilder()
+    + ProjectConfigurationBuilder(orderedConfigProviders:IEnumerable<IConfigurationProvider>)
+    + BuildConfiguration() : SerializableProjectConfiguration
+    + GenerateConfigFileInProject() : void
+    + {static} AddConfigToProject(config:string) : void
+    + {static} RemoveConfigFromProject() : void
+}
+IPreprocessBuildWithReport <|-- ProjectConfigurationBuilder
+IPostprocessBuildWithReport <|-- ProjectConfigurationBuilder
+@enduml

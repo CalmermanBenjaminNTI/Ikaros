@@ -1,0 +1,18 @@
+@startuml
+interface IErrorInfo {
+}
+enum ErrorInfoPriority {
+    Critical= 0,
+    Error,
+    Warning,
+    Info,
+    None,
+}
+enum ErrorInfoBehavior {
+    Alert= 0,
+    Automatic,
+    Hidden,
+    ConsoleOnly,
+    Reconnect,
+}
+@enduml

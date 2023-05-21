@@ -1,0 +1,121 @@
+@startuml
+class Collab {
+    +  <<event>> UpdatedChangeList : Action 
+    +  <<event>> UpdatedSelectedChangeList : Action<IReadOnlyList<string>> 
+    +  <<event>> UpdatedConflictState : Action<bool> 
+    +  <<event>> UpdatedRemoteRevisionsAvailability : Action<bool> 
+    +  <<event>> UpdatedProjectStatus : Action<ProjectStatus> 
+    +  <<event>> UpdatedOperationStatus : Action<bool> 
+    +  <<event>> UpdatedOperationProgress : Action<IProgressInfo> 
+    +  <<event>> ErrorOccurred : Action<IErrorInfo> 
+    +  <<event>> ErrorCleared : Action 
+    + Collab()
+    + GetRemoteRevisionAvailability() : bool
+    + GetConflictedState() : bool
+    + GetProgressState() : IProgressInfo
+    + GetErrorState() : IErrorInfo
+    + <<virtual>> GetProjectStatus() : ProjectStatus
+    + RequestChangeList(callback:Action<IReadOnlyList<IChangeEntry>>) : void
+    + RequestPublish(message:string, changeEntries:IReadOnlyList<IChangeEntry>) : void
+    +  <<event>> UpdatedHistoryEntries : Action 
+    + RequestHistoryEntry(revisionId:string, callback:Action<IHistoryEntry>) : void
+    + RequestHistoryPage(offset:int, pageSize:int, callback:Action<IReadOnlyList<IHistoryEntry>>) : void
+    + RequestHistoryCount(callback:Action<int?>) : void
+    + RequestDiscard(entry:IChangeEntry) : void
+    + RequestBulkDiscard(entries:IReadOnlyList<IChangeEntry>) : void
+    + RequestDiffChanges(path:string) : void
+    + SupportsRevert : bool <<get>> = false
+    + RequestRevert(revisionId:string, files:IReadOnlyList<string>) : void
+    + RequestUpdateTo(revisionId:string) : void
+    + RequestRestoreTo(revisionId:string) : void
+    + RequestGoBackTo(revisionId:string) : void
+    + ClearError() : void
+    + RequestShowConflictedDifferences(path:string) : void
+    + RequestChooseMerge(path:string) : void
+    + RequestChooseMine(paths:string[]) : void
+    + RequestChooseRemote(paths:string[]) : void
+    + RequestSync() : void
+    + RequestCancelJob() : void
+    + <<virtual>> ShowServicePage() : void
+    + ShowLoginPage() : void
+    + ShowNoSeatPage() : void
+    + <<async>> RequestTurnOnService() : void
+}
+enum CollabErrorCode {
+    Collab_ErrNone= 0,
+    Collab_Error,
+    Collab_ErrProjectNotLinked,
+    Collab_ErrNoSuchRepository,
+    Collab_ErrNotLoggedIn,
+    Collab_ErrNotConnected,
+    Collab_ErrLocalCache,
+    Collab_ErrNotUpToDate,
+    Collab_ErrCannotGetRevision,
+    Collab_ErrCannotGetRemote,
+    Collab_ErrCannotGetLocal,
+    Collab_ErrInvalidHost,
+    Collab_ErrInvalidPort,
+    Collab_ErrInvalidRevision,
+    Collab_ErrNotSnapshot,
+    Collab_ErrNoSuchRemoteFile,
+    Collab_ErrNoSuchLocalFile,
+    Collab_ErrJobNotDefined,
+    Collab_ErrJobAlreadyRunning,
+    Collab_ErrAlreadyUpToDate,
+    Collab_ErrJobNotRunning,
+    Collab_ErrNotSupported,
+    Collab_ErrJobCancelled,
+    Collab_ErrCannotSubmitChanges,
+    Collab_ErrMD5DoesNotMatch,
+    Collab_ErrRemoteChanged,
+    Collab_ErrCannotCreateTempDir,
+    Collab_ErrCannotDownloadEntry,
+    Collab_ErrCannotCreatePath,
+    Collab_ErrCannotCreateFile,
+    Collab_ErrCannotCopyFile,
+    Collab_ErrCannotMoveFile,
+    Collab_ErrCannotDeleteFile,
+    Collab_ErrCannotGetProjects,
+    Collab_ErrCannotRestoreSnapshot,
+    Collab_ErrFileWasAddedLocally,
+    Collab_ErrFileIsModified,
+    Collab_ErrFileIsMissing,
+    Collab_ErrFileAlreadyExists,
+    Collab_ErrAutomaticMergeBaseIsMissing,
+    Collab_ErrSmartMergeConflicts,
+    Collab_ErrTextMergeConflicts,
+    Collab_ErrAutomaticMerge,
+    Collab_ErrSmartMerge,
+    Collab_ErrTextMerge,
+    Collab_ErrExternalDiff,
+    Collab_ErrExternalMerge,
+    Collab_ErrParseJson,
+    Collab_ErrWrongSerializationMode,
+    Collab_ErrNoDiffRevisions,
+    Collab_ErrWorkspaceChanged,
+    Collab_ErrRefreshChannelAccess,
+    Collab_ErrUpdateInProgress,
+    Collab_ErrSoftLocksJobRunning,
+    Collab_ErrCannotGetSoftLocks,
+    Collab_ErrPostSoftLocks,
+    Collab_ErrRequestCancelled,
+    Collab_ErrCollabInErrorState,
+    Collab_ErrUsageExceeded,
+    Collab_ErrRepositoryLocked,
+    Collab_ErrJobWaitingForSubTasks,
+    Collab_ErrBadRequest= 400,
+    Collab_ErrNotAuthorized= 401,
+    Collab_ErrInternalServerError= 500,
+    Collab_ErrBadGateway= 502,
+    Collab_ErrServerUnavailable= 503,
+    Collab_ErrSmartMergeSetConflictState,
+    Collab_ErrTextMergeSetConflictState,
+    Collab_ErrExternalMergeSetConflictState,
+    Collab_ErrNoDiffMergeToolsConfigured,
+    Collab_ErrUnsupportedDiffMergeToolConfigured,
+    Collab_ErrNoSeat,
+    Collab_ErrNoSeatHidden,
+}
+ISourceControlProvider <|-- Collab
+Collab +-- CollabErrorCode
+@enduml

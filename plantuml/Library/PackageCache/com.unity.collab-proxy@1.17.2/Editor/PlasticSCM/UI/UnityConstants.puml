@@ -1,0 +1,10 @@
+@startuml
+class UnityConstants <<static>> {
+}
+class ChangesetsColumns <<static>> {
+}
+class BranchesColumns <<static>> {
+}
+UnityConstants +-- ChangesetsColumns
+UnityConstants +-- BranchesColumns
+@enduml

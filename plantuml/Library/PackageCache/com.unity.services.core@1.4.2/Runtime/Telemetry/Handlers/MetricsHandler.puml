@@ -1,0 +1,8 @@
+@startuml
+class MetricsHandler {
+    + MetricsHandler(config:TelemetryConfig, cache:CachedPayload<MetricsPayload>, scheduler:IActionScheduler, cachePersister:ICachePersister<MetricsPayload>, sender:TelemetrySender)
+}
+class "TelemetryHandler`2"<T1,T2> {
+}
+"TelemetryHandler`2" "<MetricsPayload,Metric>" <|-- MetricsHandler
+@enduml

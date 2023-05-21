@@ -1,0 +1,11 @@
+@startuml
+class TestHelpers <<static>> {
+    + <<const>> TestDirectory : string = "SomePathName/"
+    + {static} RunSync(func:Func<Task<TResult>>) : TResult
+    + {static} RunSync(func:Func<Task>) : void
+    + {static} ThrowsAsync(asyncDelegate:Func<Task>) : void
+    + {static} ShouldBe(expr1:T, value:T, msg:string) : void
+    + {static} ShouldBe(expr1:object, value:object, msg:string) : void
+    + {static} ShouldBeNull(obj:object, msg:string) : void
+}
+@enduml

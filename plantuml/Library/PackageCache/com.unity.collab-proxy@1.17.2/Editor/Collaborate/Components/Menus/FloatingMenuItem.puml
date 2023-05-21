@@ -1,0 +1,7 @@
+@startuml
+class FloatingMenuItem {
+    + <<override>> canGrabFocus : bool <<get>> = true
+    + FloatingMenuItem(text:string, action:Action, enabled:bool, height:float)
+}
+VisualElement <|-- FloatingMenuItem
+@enduml

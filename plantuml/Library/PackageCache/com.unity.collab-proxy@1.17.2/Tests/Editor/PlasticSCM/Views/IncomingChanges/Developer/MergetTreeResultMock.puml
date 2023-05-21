@@ -1,0 +1,4 @@
+@startuml
+class MergeTreeResultMock <<static>> {
+}
+@enduml

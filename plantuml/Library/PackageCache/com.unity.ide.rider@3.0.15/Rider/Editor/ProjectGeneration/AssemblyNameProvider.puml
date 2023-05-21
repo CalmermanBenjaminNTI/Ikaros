@@ -1,0 +1,19 @@
+@startuml
+class AssemblyNameProvider {
+    + ProjectGenerationRootNamespace : string <<get>>
+    + GetAssemblyNameFromScriptPath(path:string) : string
+    + GetAssemblies(shouldFileBePartOfSolution:Func<string, bool>) : IEnumerable<Assembly>
+    + GetProjectName(name:string, defines:string[]) : string
+    + GetAllAssetPaths() : IEnumerable<string>
+    + FindForAssetPath(assetPath:string) : UnityEditor.PackageManager.PackageInfo
+    + ResetPackageInfoCache() : void
+    + ResetAssembliesCache() : void
+    + IsInternalizedPackagePath(path:string) : bool
+    + ParseResponseFile(responseFilePath:string, projectDirectory:string, systemReferenceDirectories:string[]) : ResponseFileData
+    + GetRoslynAnalyzerPaths() : IEnumerable<string>
+    + ToggleProjectGeneration(preference:ProjectGenerationFlag) : void
+    + ResetProjectGenerationFlag() : void
+}
+IAssemblyNameProvider <|-- AssemblyNameProvider
+AssemblyNameProvider --> "ProjectGenerationFlag" ProjectGenerationFlag
+@enduml

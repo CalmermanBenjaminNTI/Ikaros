@@ -1,0 +1,23 @@
+@startuml
+class EditorGameServiceAnalyticsSender <<static>> {
+}
+class AnalyticsComponent <<static>> {
+    + <<const>> ProjectSettings : string = "Project Settings"
+    + <<const>> TopMenu : string = "Top Menu"
+}
+class AnalyticsAction <<static>> {
+    + <<const>> Configure : string = "Configure"
+    + <<const>> OpenChanges : string = "Open Changes Panel"
+    + <<const>> OpenHistory : string = "Open History Panel"
+    + <<const>> CloudStorageDashboard : string = "Open Cloud Storage Web Dashboard"
+    + <<const>> LearnMore : string = "Learn More"
+}
+class EditorGameServiceEvent <<struct>> {
+    + action : string
+    + component : string
+    + package : string
+}
+EditorGameServiceAnalyticsSender +-- AnalyticsComponent
+EditorGameServiceAnalyticsSender +-- AnalyticsAction
+EditorGameServiceAnalyticsSender +-- EditorGameServiceEvent
+@enduml

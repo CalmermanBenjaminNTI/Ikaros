@@ -1,0 +1,7 @@
+@startuml
+class DownloadRepositoryOperation {
+}
+class DownloadRepositoryParameters {
+}
+DownloadRepositoryOperation +-- DownloadRepositoryParameters
+@enduml

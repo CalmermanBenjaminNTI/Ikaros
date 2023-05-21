@@ -1,0 +1,22 @@
+@startuml
+class TestStartModel {
+    + requestTurnOnServiceCount : int
+    + showServicePageCount : int
+    + showLoginPageCount : int
+    + showNoSeatPageCount : int
+    +  <<event>> StateChanged : Action 
+    + TriggerStateChanged() : void
+    +  <<event>> ProjectStatusChanged : Action<ProjectStatus> 
+    + TriggerProjectStatusChanged(status:ProjectStatus) : void
+    + OnStart() : void
+    + OnStop() : void
+    + RestoreState(cache:IWindowCache) : void
+    + SaveState(cache:IWindowCache) : void
+    + RequestTurnOnService() : void
+    + ShowServicePage() : void
+    + ShowLoginPage() : void
+    + ShowNoSeatPage() : void
+}
+IStartModel <|-- TestStartModel
+TestStartModel --> "ProjectStatus" ProjectStatus
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class ChangesetsTab <<partial>> {
+}
+interface IGoBackToListener {
+}
+IRefreshableView <|-- ChangesetsTab
+IQueryRefreshableView <|-- ChangesetsTab
+IChangesetMenuOperations <|-- ChangesetsTab
+ChangesetsTab +-- IGoBackToListener
+@enduml
