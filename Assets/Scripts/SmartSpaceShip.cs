@@ -29,10 +29,10 @@ public class SmartSpaceShip : SpaceShip
         t.Rotate(0, 0, Time.deltaTime * Input.GetAxis("Roll") * _turningSpeed.z);
 
         //Stabelize the spaceship
-        if (Input.GetAxis("Stabelize") > 0)
+        if (Input.GetAxis("Stabilize") > 0)
         {
-            t.rotation *= Quaternion.Euler(1 - 0.5f * Time.deltaTime, 1, 1 - 0.5f * Time.deltaTime);
-            //t.rotation = Quaternion.Slerp(t.rotation, Quaternion.Euler(0, t.rotation.eulerAngles.y, 0), Time.deltaTime * 2);
+            // Lerp to the rotation where global up is the local up
+            t.rotation = Quaternion.Slerp(t.rotation, Quaternion.Euler(0, t.rotation.eulerAngles.y, 0), Time.deltaTime * 2);
         }
 
         //Move the spaceship forward based on the throttle

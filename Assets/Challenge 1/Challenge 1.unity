@@ -2133,11 +2133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1384170396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d759ed43597b844b3c61cc89c0d784, type: 3}
-  m_PrefabInstance: {fileID: 1274435682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1491464428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2829,8 +2824,7 @@ MonoBehaviour:
   - {fileID: 188836350}
   - {fileID: 670328499}
   - {fileID: 267054853}
-  - {fileID: 1384170396}
-  _currentSpaceShip: Crescent
+  _currentSpaceShip: crescent
 --- !u!4 &1941005216
 Transform:
   m_ObjectHideFlags: 0

@@ -18,20 +18,20 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         // Add spaceships to the dictionary
-        _spaceShips.Add("Crescent", new AdvancedSpaceShip(0, new Vector3(200, 200, 200), 5f, new Vector3(2, 2, 2)));
-        _spaceShips.Add("Herald", new SmartSpaceShip(1, new Vector3(200, 200, 200), 5f));
-        _spaceShips.Add("StarGazer", new SpaceShip(2, new Vector3(200, 200, 200), 5f));
+        _spaceShips.Add("crescent", new AdvancedSpaceShip(0, new Vector3(200, 200, 200), 5f, new Vector3(2, 2, 2)));
+        _spaceShips.Add("herald", new SmartSpaceShip(1, new Vector3(200, 200, 200), 5f));
+        _spaceShips.Add("stargazer", new SpaceShip(2, new Vector3(200, 200, 200), 5f));
 
         // Try set the current spaceship to the one the player chose else default to Crescent
         try
         {
-            _spaceShipPrefabs[_spaceShips[_currentSpaceShip].PrefabIndex].SetActive(true);
+            _spaceShipPrefabs[_spaceShips[_currentSpaceShip.ToLower()].PrefabIndex].SetActive(true);
         }
         catch
         {
             Debug.Log("Space ship not found, defaulting to Crescent");
             _currentSpaceShip = "Crescent";
-            _spaceShipPrefabs[_spaceShips[_currentSpaceShip].PrefabIndex].SetActive(true);
+            _spaceShipPrefabs[_spaceShips[_currentSpaceShip.ToLower()].PrefabIndex].SetActive(true);
         }
     }
 
