@@ -1,5 +1,0 @@
-@startuml
-class CubeLutAssetImporter <<sealed>> {
-}
-AssetPostprocessor <|-- CubeLutAssetImporter
-@enduml

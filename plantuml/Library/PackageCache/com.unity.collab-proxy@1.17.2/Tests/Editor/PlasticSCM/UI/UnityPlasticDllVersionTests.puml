@@ -1,5 +1,0 @@
-@startuml
-class UnityPlasticDllVersionTests {
-    + TestUnityPlasticDllVersion() : void
-}
-@enduml

@@ -1,7 +1,0 @@
-@startuml
-class PackageConfig <<struct>> {
-    + Name : string
-    + Version : string
-    + PackageConfig(packageInfo:PackageInfo)
-}
-@enduml

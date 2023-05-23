@@ -1,6 +1,0 @@
-@startuml
-class EnabledVisuals {
-    + GetVisuals() : VisualElement
-}
-IVisuals <|-- EnabledVisuals
-@enduml

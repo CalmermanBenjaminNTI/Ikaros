@@ -1,7 +1,0 @@
-@startuml
-class TimeStamp <<static>> {
-    + {static} UseRelativeTimeStamps : bool <<get>>
-    + {static} GetTimeStamp(dateTime:DateTimeOffset) : string
-    + {static} GetLocalisedTimeStamp(dateTime:DateTimeOffset) : string
-}
-@enduml

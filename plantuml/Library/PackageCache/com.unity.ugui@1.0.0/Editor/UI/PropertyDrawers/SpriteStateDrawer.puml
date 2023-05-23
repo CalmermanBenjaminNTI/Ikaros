@@ -1,7 +1,0 @@
-@startuml
-class SpriteStateDrawer {
-    + <<override>> OnGUI(rect:Rect, prop:SerializedProperty, label:GUIContent) : void
-    + <<override>> GetPropertyHeight(prop:SerializedProperty, label:GUIContent) : float
-}
-PropertyDrawer <|-- SpriteStateDrawer
-@enduml

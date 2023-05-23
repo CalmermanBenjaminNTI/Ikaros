@@ -1,4 +1,0 @@
-@startuml
-class "ArrayContainer`1"<T> {
-}
-@enduml

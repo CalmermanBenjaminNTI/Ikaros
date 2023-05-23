@@ -2,6 +2,6 @@
 class SpaceShip {
     + PrefabIndex : int <<get>>
     + SpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float)
-    + Move(t:Transform, v:Vector3) : Vector3
+    <<virtual>> + Move(t:Transform, v:Vector3) : Vector3
 }
 @enduml

@@ -1,5 +1,0 @@
-@startuml
-class TestWindow {
-}
-EditorWindow <|-- TestWindow
-@enduml

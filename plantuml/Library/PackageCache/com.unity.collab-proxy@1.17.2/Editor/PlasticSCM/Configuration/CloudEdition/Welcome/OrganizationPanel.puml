@@ -1,6 +1,0 @@
-@startuml
-class OrganizationPanel {
-    + mOrganizationToJoin : string = ""
-}
-VisualElement <|-- OrganizationPanel
-@enduml

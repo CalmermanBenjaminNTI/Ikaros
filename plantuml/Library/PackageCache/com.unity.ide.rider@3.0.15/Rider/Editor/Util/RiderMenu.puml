@@ -1,5 +1,0 @@
-@startuml
-class RiderMenu <<static>> {
-    + {static} MenuOpenProject() : void
-}
-@enduml

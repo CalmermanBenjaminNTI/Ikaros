@@ -1,5 +1,0 @@
-@startuml
-class CreateOrganizationPanel {
-}
-VisualElement <|-- CreateOrganizationPanel
-@enduml

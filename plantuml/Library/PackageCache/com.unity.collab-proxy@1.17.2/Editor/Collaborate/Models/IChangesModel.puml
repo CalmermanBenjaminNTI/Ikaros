@@ -1,5 +1,0 @@
-@startuml
-interface IChangesModel {
-}
-IModel <|-- IChangesModel
-@enduml

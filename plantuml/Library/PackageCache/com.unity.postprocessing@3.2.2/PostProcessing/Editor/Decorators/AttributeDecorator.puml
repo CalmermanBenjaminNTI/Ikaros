@@ -1,6 +1,0 @@
-@startuml
-abstract class AttributeDecorator {
-    + <<virtual>> IsAutoProperty() : bool
-    + {abstract} OnGUI(property:SerializedProperty, overrideState:SerializedProperty, title:GUIContent, attribute:Attribute) : bool
-}
-@enduml

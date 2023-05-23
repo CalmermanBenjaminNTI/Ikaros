@@ -1,4 +1,0 @@
-@startuml
-class VolumeFactory <<static>> {
-}
-@enduml

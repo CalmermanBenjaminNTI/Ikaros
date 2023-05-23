@@ -1,8 +1,0 @@
-@startuml
-class SerializedParameterOverride <<sealed>> {
-    + displayName : string <<get>>
-    + GetAttribute() : T
-}
-SerializedParameterOverride --> "overrideState" SerializedProperty
-SerializedParameterOverride --> "value" SerializedProperty
-@enduml

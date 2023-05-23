@@ -1,6 +1,0 @@
-@startuml
-class CloudCollabEnabler {
-    + <<override>> IsEnabled() : bool
-}
-EditorGameServiceFlagEnabler <|-- CloudCollabEnabler
-@enduml

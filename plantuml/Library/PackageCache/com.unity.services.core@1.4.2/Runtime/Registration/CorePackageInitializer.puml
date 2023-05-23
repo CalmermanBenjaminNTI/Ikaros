@@ -1,9 +1,0 @@
-@startuml
-class CorePackageInitializer {
-    + <<async>> Initialize(registry:CoreRegistry) : Task
-    + <<async>> CreateDiagnosticsComponents() : Task<IDiagnosticsFactory>
-    + <<async>> GetSerializedProjectConfigurationAsync() : Task<string>
-}
-IInitializablePackage <|-- CorePackageInitializer
-IDiagnosticsComponentProvider <|-- CorePackageInitializer
-@enduml

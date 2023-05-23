@@ -1,5 +1,0 @@
-@startuml
-class TestConstants <<static>> {
-    + <<const>> RENDER_UI_THREAD_DELAY : int = 1000
-}
-@enduml

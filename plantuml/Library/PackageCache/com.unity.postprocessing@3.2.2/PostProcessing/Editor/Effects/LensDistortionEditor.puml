@@ -1,6 +1,0 @@
-@startuml
-class LensDistortionEditor <<sealed>> {
-    + <<override>> OnInspectorGUI() : void
-}
-DefaultPostProcessEffectEditor <|-- LensDistortionEditor
-@enduml

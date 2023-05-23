@@ -1,4 +1,0 @@
-@startuml
-class ParseArguments <<static>> {
-}
-@enduml

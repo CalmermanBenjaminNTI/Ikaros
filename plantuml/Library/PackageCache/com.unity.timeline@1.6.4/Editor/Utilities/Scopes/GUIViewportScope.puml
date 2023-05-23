@@ -1,7 +1,0 @@
-@startuml
-class GUIViewportScope <<struct>> {
-    + GUIViewportScope(position:Rect)
-    + Dispose() : void
-}
-IDisposable <|-- GUIViewportScope
-@enduml

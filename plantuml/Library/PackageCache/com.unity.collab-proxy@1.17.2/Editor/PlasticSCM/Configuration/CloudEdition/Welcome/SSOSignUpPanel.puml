@@ -1,5 +1,0 @@
-@startuml
-class SSOSignUpPanel {
-}
-VisualElement <|-- SSOSignUpPanel
-@enduml

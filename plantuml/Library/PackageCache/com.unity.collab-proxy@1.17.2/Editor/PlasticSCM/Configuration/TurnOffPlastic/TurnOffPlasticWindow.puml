@@ -1,5 +1,0 @@
-@startuml
-class TurnOffPlasticWindow {
-}
-EditorWindow <|-- TurnOffPlasticWindow
-@enduml

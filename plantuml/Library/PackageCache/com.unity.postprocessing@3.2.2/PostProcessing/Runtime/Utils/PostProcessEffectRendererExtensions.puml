@@ -1,5 +1,0 @@
-@startuml
-class PostProcessEffectRendererExtensions <<static>> {
-    + {static} RenderOrLog(self:PostProcessEffectRenderer, context:PostProcessRenderContext) : Exception
-}
-@enduml

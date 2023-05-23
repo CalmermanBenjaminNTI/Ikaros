@@ -1,5 +1,0 @@
-@startuml
-class OpenLinksUtility <<static>> {
-    + {static} OpenMembersLink() : void
-}
-@enduml

@@ -1,6 +1,0 @@
-@startuml
-class TelemetryUtils <<static>> {
-    + {static} CreateMetricsFactory(scheduler:IActionScheduler, projectConfiguration:IProjectConfiguration, cloudProjectId:ICloudProjectId, environments:IEnvironments) : IMetricsFactory
-    + {static} CreateDiagnosticsFactory(scheduler:IActionScheduler, projectConfiguration:IProjectConfiguration, cloudProjectId:ICloudProjectId, environments:IEnvironments) : IDiagnosticsFactory
-}
-@enduml

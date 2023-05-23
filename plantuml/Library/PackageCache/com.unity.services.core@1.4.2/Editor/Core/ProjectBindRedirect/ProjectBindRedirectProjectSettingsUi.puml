@@ -1,5 +1,0 @@
-@startuml
-class ProjectBindRedirectProjectSettingsUi {
-    + ProjectBindRedirectProjectSettingsUi(parentElement:VisualElement)
-}
-@enduml

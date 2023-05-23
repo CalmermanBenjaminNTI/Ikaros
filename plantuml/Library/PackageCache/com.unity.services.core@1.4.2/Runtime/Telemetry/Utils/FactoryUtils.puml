@@ -1,5 +1,0 @@
-@startuml
-class FactoryUtils <<static>> {
-    + {static} CreatePackageTags(projectConfig:IProjectConfiguration, packageName:string) : IDictionary<string, string>
-}
-@enduml

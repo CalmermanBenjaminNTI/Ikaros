@@ -1,5 +1,0 @@
-@startuml
-class RiderStyles <<static>> {
-}
-RiderStyles --> "LinkLabelStyle" GUIStyle
-@enduml

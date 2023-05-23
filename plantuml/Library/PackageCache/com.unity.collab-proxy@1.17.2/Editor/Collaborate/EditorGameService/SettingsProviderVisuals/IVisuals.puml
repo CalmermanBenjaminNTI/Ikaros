@@ -1,4 +1,0 @@
-@startuml
-interface IVisuals {
-}
-@enduml

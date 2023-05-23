@@ -1,6 +1,0 @@
-@startuml
-class AssetMenuRoutingOperations {
-}
-IAssetMenuOperations <|-- AssetMenuRoutingOperations
-IAssetFilesFilterPatternsMenuOperations <|-- AssetMenuRoutingOperations
-@enduml

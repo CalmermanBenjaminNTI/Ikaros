@@ -1,7 +1,0 @@
-@startuml
-class TrackballDecorator <<sealed>> {
-    + <<override>> IsAutoProperty() : bool
-    + <<override>> OnGUI(property:SerializedProperty, overrideState:SerializedProperty, title:GUIContent, attribute:Attribute) : bool
-}
-AttributeDecorator <|-- TrackballDecorator
-@enduml

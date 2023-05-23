@@ -1,4 +1,0 @@
-@startuml
-class LastWriteTracker <<static>> {
-}
-@enduml

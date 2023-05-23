@@ -1,0 +1,7 @@
+@startuml
+class SmartSpaceShip {
+    + SmartSpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float)
+    <<override>> + Move(t:Transform, v:Vector3) : Vector3
+}
+SpaceShip <|-- SmartSpaceShip
+@enduml

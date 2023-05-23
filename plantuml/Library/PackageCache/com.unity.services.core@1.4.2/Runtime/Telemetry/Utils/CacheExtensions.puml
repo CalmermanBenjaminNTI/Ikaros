@@ -1,7 +1,0 @@
-@startuml
-class CacheExtensions <<static>> {
-    + {static} IsEmpty(self:CachedPayload<TPayload>) : bool
-    + {static} AddRangeFrom(self:CachedPayload<DiagnosticsPayload>, payload:CachedPayload<DiagnosticsPayload>) : void
-    + {static} Add(self:CachedPayload<TPayload>, telemetryEvent:ITelemetryEvent) : void
-}
-@enduml

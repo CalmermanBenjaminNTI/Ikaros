@@ -1,7 +1,0 @@
-@startuml
-class MaxAttribute <<sealed>> {
-    + <<readonly>> max : float
-    + MaxAttribute(max:float)
-}
-Attribute <|-- MaxAttribute
-@enduml

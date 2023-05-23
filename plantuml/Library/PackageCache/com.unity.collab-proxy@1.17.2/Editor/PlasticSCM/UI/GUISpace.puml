@@ -1,4 +1,0 @@
-@startuml
-class GUISpace <<static>> {
-}
-@enduml

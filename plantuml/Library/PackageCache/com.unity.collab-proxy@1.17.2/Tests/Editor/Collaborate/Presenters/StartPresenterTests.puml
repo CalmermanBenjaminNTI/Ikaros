@@ -1,9 +1,0 @@
-@startuml
-class StartPresenterTests {
-    + Setup() : void
-    + TearDown() : void
-    + TestRequestingStart() : void
-    + TestUpdatingProjectStatus() : void
-    + TestStateChange() : void
-}
-@enduml

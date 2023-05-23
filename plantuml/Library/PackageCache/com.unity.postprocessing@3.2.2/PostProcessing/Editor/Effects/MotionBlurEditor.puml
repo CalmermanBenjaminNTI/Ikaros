@@ -1,6 +1,0 @@
-@startuml
-class MotionBlurEditor <<sealed>> {
-    + <<override>> OnInspectorGUI() : void
-}
-DefaultPostProcessEffectEditor <|-- MotionBlurEditor
-@enduml

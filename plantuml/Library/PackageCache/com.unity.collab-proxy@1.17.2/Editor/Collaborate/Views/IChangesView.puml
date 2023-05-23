@@ -1,7 +1,0 @@
-@startuml
-interface IChangesView {
-}
-class "IView`1"<T> {
-}
-"IView`1" "<IChangesPresenter>" <|-- IChangesView
-@enduml

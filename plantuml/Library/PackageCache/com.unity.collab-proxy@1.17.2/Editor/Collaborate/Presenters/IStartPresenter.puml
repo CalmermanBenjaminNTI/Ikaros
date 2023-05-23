@@ -1,5 +1,0 @@
-@startuml
-interface IStartPresenter {
-}
-IPresenter <|-- IStartPresenter
-@enduml

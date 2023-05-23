@@ -1,5 +1,0 @@
-@startuml
-class PlasticSCMWindow {
-}
-EditorWindow <|-- PlasticSCMWindow
-@enduml

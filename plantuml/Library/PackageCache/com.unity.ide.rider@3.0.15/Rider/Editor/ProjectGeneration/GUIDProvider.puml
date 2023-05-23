@@ -1,6 +1,0 @@
-@startuml
-class GUIDProvider {
-    + ProjectGuid(name:string) : string
-}
-IGUIDGenerator <|-- GUIDProvider
-@enduml

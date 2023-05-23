@@ -1,5 +1,0 @@
-@startuml
-class CloudCollabSettingsProvider {
-}
-EditorGameServiceSettingsProvider <|-- CloudCollabSettingsProvider
-@enduml

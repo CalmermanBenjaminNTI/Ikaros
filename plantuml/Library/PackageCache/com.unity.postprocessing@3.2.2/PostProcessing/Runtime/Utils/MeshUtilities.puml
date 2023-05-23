@@ -1,4 +1,0 @@
-@startuml
-class MeshUtilities <<static>> {
-}
-@enduml

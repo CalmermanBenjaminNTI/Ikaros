@@ -1,9 +1,0 @@
-@startuml
-class Edge <<struct>> {
-    + time : double <<get>> <<set>>
-    + showSnapHint : bool <<get>> <<set>>
-    + Edge(edgeTime:double, snapHint:bool)
-}
-interface ISnappable {
-}
-@enduml

@@ -1,5 +1,0 @@
-@startuml
-class CheckinMergeNeededDialog {
-}
-PlasticDialog <|-- CheckinMergeNeededDialog
-@enduml

@@ -1,5 +1,0 @@
-@startuml
-interface IHistoryModel {
-}
-IModel <|-- IHistoryModel
-@enduml

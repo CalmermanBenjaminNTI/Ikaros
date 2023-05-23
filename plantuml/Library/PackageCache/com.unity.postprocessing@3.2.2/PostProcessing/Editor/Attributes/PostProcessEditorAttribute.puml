@@ -1,7 +1,0 @@
-@startuml
-class PostProcessEditorAttribute <<sealed>> {
-    + PostProcessEditorAttribute(settingsType:Type)
-}
-Attribute <|-- PostProcessEditorAttribute
-PostProcessEditorAttribute --> "settingsType" Type
-@enduml

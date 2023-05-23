@@ -1,0 +1,52 @@
+@startuml
+class AdvancedSpaceShip {
+    + AdvancedSpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float, hoverSpeed:Vector3)
+    + Hover(t:Transform, v:Vector3) : Vector3
+}
+SpaceShip <|-- AdvancedSpaceShip
+class BlendThrust {
+}
+MonoBehaviour <|-- BlendThrust
+class Checkpoints {
+    + BestTime : string <<get>> <<set>>
+}
+MonoBehaviour <|-- Checkpoints
+class GoogleRequests {
+    + GetHighScore() : void
+    + SetData(score:string) : void
+}
+class Highscores {
+}
+class Highscore {
+    + player : string
+    + highscore : string
+    + {static} GetHighscoreByPlayer(highscores:List<Highscore>, player:string) : string
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- GoogleRequests
+Highscores --> "data<Highscore>" "List`1"
+class PlayerBehaviour {
+}
+MonoBehaviour <|-- PlayerBehaviour
+class PlayerCamera {
+}
+MonoBehaviour <|-- PlayerCamera
+class PlayerController {
+}
+MonoBehaviour <|-- PlayerController
+class PlayerController {
+}
+MonoBehaviour <|-- PlayerController
+class SpaceShip {
+    + PrefabIndex : int <<get>>
+    + SpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float)
+    + Move(t:Transform, v:Vector3) : Vector3
+}
+class SmartSpaceShip {
+    + SmartSpaceShip(prefabIndex:int, turningSpeed:Vector3, thrust:float)
+    <<override>> + Move(t:Transform, v:Vector3) : Vector3
+}
+SpaceShip <|-- SmartSpaceShip
+@enduml
+

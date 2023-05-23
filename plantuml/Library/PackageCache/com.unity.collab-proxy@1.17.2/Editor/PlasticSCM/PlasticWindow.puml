@@ -1,9 +1,0 @@
-@startuml
-class PlasticWindow {
-    + {static} Open() : void
-}
-class Reload <<static>> {
-}
-EditorWindow <|-- PlasticWindow
-PlasticWindow +-- Reload
-@enduml

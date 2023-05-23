@@ -1,7 +1,0 @@
-@startuml
-interface IStartView {
-}
-class "IView`1"<T> {
-}
-"IView`1" "<IStartPresenter>" <|-- IStartView
-@enduml

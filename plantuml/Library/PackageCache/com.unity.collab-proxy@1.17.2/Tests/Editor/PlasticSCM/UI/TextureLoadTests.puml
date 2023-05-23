@@ -1,6 +1,0 @@
-@startuml
-class TextureLoadTests {
-    + OneLoad_Reference() : void
-    + OneHundredLoads_Reference() : void
-}
-@enduml

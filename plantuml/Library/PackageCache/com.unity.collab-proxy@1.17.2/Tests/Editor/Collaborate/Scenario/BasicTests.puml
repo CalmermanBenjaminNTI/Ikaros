@@ -1,5 +1,0 @@
-@startuml
-class BasicTests {
-}
-ScenarioTestBase <|-- BasicTests
-@enduml
